@@ -19,22 +19,22 @@ const router = createBrowserRouter([
       // Our root route always provides the user, if logged in
       return { user: fakeAuthProvider.username };
     },
-    Component: <Root />,
+    Component: Root,
     children: [
       {
         index: true,
-        Component: <PublicPage />,
+        Component: PublicPage,
       },
       {
         path: "login",
         action: loginAction,
         loader: loginLoader,
-        Component: <LoginPage />,
+        Component: LoginPage,
       },
       {
         path: "protected",
         loader: protectedLoader,
-        Component: <ProtectedPage />,
+        Component: ProtectedPage,
       },
     ],
   },
